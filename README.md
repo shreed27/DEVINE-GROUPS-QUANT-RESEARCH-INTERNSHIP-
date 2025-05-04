@@ -8,7 +8,7 @@
 ![Last Updated](https://img.shields.io/badge/Updated-May_2025-orange)
 
 ![Strategy Type](https://img.shields.io/badge/Strategy-HFT_Momentum-purple)
-![Deployment](https://img.shields.io/badge/Deployed-No-red)
+![Deployment](https://img.shields.io/badge/Deployed-Yes-green)
 ![Outputs](https://img.shields.io/badge/Outputs-PDF_&_Plots-success)
 ![Benchmark](https://img.shields.io/badge/Benchmark-BTC-black)
 
@@ -52,8 +52,8 @@ This project is executed in an agile, modular format inspired by professional qu
 
 ## 📁 Key Outputs
 - `DG05_Quant_FactSheet_Structure.pdf`: Structural planning document (for internal and public documentation)
-- `DG05_EquityCurve.png` *(coming)*: Strategy equity curve
-- `DG05_FactSheet.pdf` *(coming)*: Final one-page institutional-grade strategy fact sheet
+- `DG05_EquityCurve.png`: Strategy equity curve
+- `DG05_FactSheet.pdf`: Final one-page institutional-grade strategy fact sheet
 
 ## 📌 Notes
 - All returns used are gross (pre-cost, pre-fee)
