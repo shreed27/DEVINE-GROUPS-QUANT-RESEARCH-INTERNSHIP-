@@ -64,4 +64,4 @@ This project is executed in an agile, modular format inspired by professional qu
 
 👨‍💻 Developed as part of my **Quant Research Internship at Devine Group**.
 
-Feel free to clone or fork this repo if you're building your own quant research or strategy analytics toolkit.
+
