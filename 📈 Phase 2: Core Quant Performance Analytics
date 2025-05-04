@@ -1,0 +1,57 @@
+## 📈 Phase 2: Core Quant Performance Analytics
+
+### 🎯 Objective:
+Calculate key performance metrics for the DG05 strategy using the cleaned daily return data.
+
+---
+
+### 📊 Metrics Computed:
+
+| Metric                  | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| **Cumulative Return**     | Total growth of the strategy from start to end (compounded)                 |
+| **CAGR** (Annualized Return) | Yearly return assuming compounding                                       |
+| **Annualized Volatility** | Standard deviation of daily returns scaled by √252                         |
+| **Sharpe Ratio**          | Return-to-risk ratio (gross, no risk-free rate)                             |
+| **Max Drawdown**          | Worst peak-to-trough drop in cumulative return curve                        |
+| **Calmar Ratio**          | CAGR divided by absolute Max Drawdown                                       |
+| **Win Rate**              | % of days where the strategy return was positive                            |
+| **Skewness**              | Asymmetry of return distribution (negative = left tail)                     |
+| **Kurtosis**              | Fatness of tails (higher = more outliers)                                  |
+
+---
+
+### 🧮 Methodology:
+
+We used standard finance formulas implemented in `numpy` and `pandas`. Here's how:
+
+```python
+# Key assumptions
+TRADING_DAYS = 252
+
+# Daily stats
+mean_daily_return = df_dg05["DG05"].mean()
+std_daily_return = df_dg05["DG05"].std()
+
+# Compounded returns
+df_dg05["Cumulative_Return"] = (1 + df_dg05["DG05"]).cumprod()
+cumulative_return = df_dg05["Cumulative_Return"].iloc[-1] - 1
+
+# CAGR
+num_years = (df_dg05["Date"].iloc[-1] - df_dg05["Date"].iloc[0]).days / 365.25
+cagr = (df_dg05["Cumulative_Return"].iloc[-1]) ** (1 / num_years) - 1
+
+# Volatility & Sharpe
+volatility = std_daily_return * np.sqrt(TRADING_DAYS)
+sharpe_ratio = mean_daily_return / std_daily_return * np.sqrt(TRADING_DAYS)
+
+# Drawdown
+running_max = df_dg05["Cumulative_Return"].cummax()
+drawdown = df_dg05["Cumulative_Return"] / running_max - 1
+max_drawdown = drawdown.min()
+calmar_ratio = cagr / abs(max_drawdown)
+
+# Win Rate, Skew, Kurtosis
+win_rate = (df_dg05["DG05"] > 0).mean()
+skewness = df_dg05["DG05"].skew()
+kurtosis = df_dg05["DG05"].kurt()
