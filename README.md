@@ -1,4 +1,19 @@
 # DEVINE-GROUPS-QUANT-RESEARCH-INTERNSHIP-
+# DG05 Quant Strategy — Production Fact Sheet Project
+
+![Project Stage](https://img.shields.io/badge/Stage-In_Progress-yellow)
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Last Updated](https://img.shields.io/badge/Updated-May_2025-orange)
+
+![Strategy Type](https://img.shields.io/badge/Strategy-HFT_Momentum-purple)
+![Deployment](https://img.shields.io/badge/Deployed-No-red)
+![Outputs](https://img.shields.io/badge/Outputs-PDF_&_Plots-success)
+![Benchmark](https://img.shields.io/badge/Benchmark-BTC-black)
+
+> 🧠 Developed during Quant Research Internship @ Devine Group
+
 
 # DG05 Quant Strategy — Production Fact Sheet Project
 
