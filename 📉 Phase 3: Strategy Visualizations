@@ -1,0 +1,58 @@
+## 📉 Phase 3: Strategy Visualizations
+
+### 🎯 Objective:
+Create a full suite of visual analytics to understand DG05’s performance, risks, return behavior, and how it compares against BTC as a benchmark.
+
+> 📌 Note: All plots are rendered directly in Colab/Jupyter. PDF/image export is optional and for presentation only.
+
+---
+
+### 📈 Equity Curve
+Visualizes how ₹1 invested in DG05 grows over time using compounded daily returns.
+
+- Highlights overall growth trajectory
+- Helps assess momentum and stagnation zones
+
+---
+
+### 🔻 Drawdown Curve
+Plots the percentage drop from the historical equity high.
+
+- Critical for understanding **capital risk**
+- Key input for Max Drawdown & Calmar Ratio
+
+---
+
+### 📊 Trading-Style Daily Return Bars
+Red/green bars for daily P&L — similar to a trader’s dashboard.
+
+- Shows return volatility at a glance
+- Win/loss clusters are easy to identify
+
+---
+
+### 🔁 90-Day Rolling Sharpe Ratio (NEW)
+Plots a 90-day rolling Sharpe to measure stability of alpha over time.
+
+- Stable Sharpe = Robust strategy
+- Volatile Sharpe = Regime sensitivity
+
+---
+
+### 📉 90-Day Rolling Volatility (NEW)
+Displays how annualized volatility changes over time.
+
+- Helps evaluate risk-adjusted sizing
+- Risk targeting possible during volatility spikes
+
+---
+
+### ⚔️ BTC Benchmark Comparison (Coming)
+Placeholder added for comparing DG05 vs BTC:
+
+- Overlay cumulative return plots
+- Analyze correlation and relative alpha
+
+```python
+# df["BTC_Return"] = ...
+# df["BTC_Cumulative"] = (1 + df["BTC_Return"]).cumprod()
