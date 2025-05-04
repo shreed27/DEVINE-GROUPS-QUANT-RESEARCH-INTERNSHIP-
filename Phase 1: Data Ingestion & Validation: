@@ -1,0 +1,47 @@
+## 📊 Phase 1: Data Ingestion & Validation
+
+### 🎯 Objective:
+Transform the raw daily return data (in PDF format) into a structured, validated dataset usable for quant analytics.
+
+---
+
+### 📥 Step 1 — Raw Data Source
+The input was a PDF file:
+
+
+This contained daily gross returns for multiple strategies: DG05, DG04, DG10, etc. Our focus was strictly on `DG05`.
+
+---
+
+### 🧹 Step 2 — Cleaning & Structuring
+Using Python (`fitz`, `pandas`), we:
+- Extracted raw text from the PDF
+- Parsed the text to identify the `Date` and `DG05` return pairs
+- Converted the series into a clean 2-column DataFrame:
+
+| Date       | DG05       |
+|------------|------------|
+| 2019-01-01 | 0.0485     |
+| 2019-01-02 | 0.0498     |
+| ...        | ...        |
+
+---
+
+### ✅ Step 3 — Data Validation
+Before moving forward with analytics, we ran basic sanity checks:
+- ✅ Removed rows with missing or malformed dates
+- ✅ Dropped NaNs or non-numeric values
+- ✅ Verified return scale (no outliers like 500% daily)
+
+This gave us a **fully clean and validated time series** of gross daily returns for the DG05 strategy.
+
+---
+
+### 📦 Output:
+- `df_dg05`: Cleaned daily return time series (Date + DG05 columns)
+- Format: `pandas.DataFrame`
+- Ready for return and risk analytics in Phase 2
+
+---
+
+> 🧠 Intern Note: This phase mimics what happens in real quant research at top firms — clean, validate, then analyze. Garbage in = garbage out.
